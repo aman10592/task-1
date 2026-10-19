@@ -1,0 +1,9 @@
+github-token
+.terraform*
+*.tfstate
+*.tfstate.backup
+*.tfstate.lock.info
+.terraform.lock.hcl
+.idea/
+*.iml
+.vscode/

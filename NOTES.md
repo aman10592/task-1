@@ -1,6 +1,6 @@
 # Notes
 
-## Scope and setup
+## Task 1 & 2: Multi-Instance EC2 Provisioning & Remote State & Locking and scope
 
 The root configuration uses the Account A and Account B AWS CLI profiles and checks each profile against the configured account ID. Update the sample region, profiles, AMI, key-pair names, role ARNs, bucket names, and ECS/ECR names for your environment in the environment `.tfvars` file. The sample EC2 map has five unique instance types, root volume types, root volume sizes, and key pairs; both `io1` and `io2` include IOPS. The selected AMI, key pairs, ECS roles, and named buckets must already exist.
 
@@ -31,7 +31,7 @@ As an alternative to DynamoDB, Terraform 1.10 and later can use an S3 lock file:
 
 `critical-api` is the protected instance. It is the sample's critical service endpoint, so an accidental destroy or replacement should stop for an explicit operator decision. Terraform lifecycle meta-arguments cannot be conditional within one `for_each` resource; the configuration therefore splits only that selected map entry into a protected resource and provisions all remaining entries through one shared resource. All five instances still come from the same `instances` input variable.
 
-##  Multi-Account IAM & Cross-Account Access
+## TASK 3:  Multi-Account IAM & Cross-Account Access
 
 - `group1` contains `engine` and `ci` and has no console login profiles. Only `engine` receives permission to assume `roleB`; `ci` receives only the task-specific deployment policy. Do not generate long-lived access keys in Terraform; provision short-lived programmatic credentials through the organization's approved identity system.
 - `group2` contains the chosen users `console-ops-1` and `console-ops-2`, has PGP-encrypted initial console passwords, and can assume `roleA`. The two roles define the permissions boundary for these sample access paths.

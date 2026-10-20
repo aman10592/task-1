@@ -1,6 +1,8 @@
 # Notes
 
-## Task 1 & 2: Multi-Instance EC2 Provisioning & Remote State & Locking and scope
+## Scope and setup
+
+## Task 1 & 2: Multi-Instance EC2 Provisioning & Remote State & Locking
 
 The root configuration uses the Account A and Account B AWS CLI profiles and checks each profile against the configured account ID. Update the sample region, profiles, AMI, key-pair names, role ARNs, bucket names, and ECS/ECR names for your environment in the environment `.tfvars` file. The sample EC2 map has five unique instance types, root volume types, root volume sizes, and key pairs; both `io1` and `io2` include IOPS. The selected AMI, key pairs, ECS roles, and named buckets must already exist.
 

@@ -21,7 +21,7 @@ terraform init -reconfigure `
 # to the state bucket and lock table. Select the dev variable file:
 terraform plan -var-file="dev.tfvars"
 terraform apply -var-file="dev.tfvars"
-
+```
 
 Terraform does not automatically load files named `dev.tfvars` or `prod.tfvars`; always pass the matching `-var-file`. If changing from a local backend with existing state, use `terraform init -migrate-state` instead of `-reconfigure` to copy that state to S3. Use `-reconfigure` only when you intend to configure the backend without migrating the existing local state.
 

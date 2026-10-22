@@ -1,7 +1,7 @@
 # Replace all REPLACE_ME values with resources and IDs from your development accounts.
 aws_region        = "us-east-1"
 account_a_profile = "account-a-dev"
-account_b_profile = "account-b-prod"
+account_b_profile = "account-b-DEV"
 account_a_id      = "000000000000"
 account_b_id      = "111111111111"
 
